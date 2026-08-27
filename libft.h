@@ -6,7 +6,7 @@
 /*   By: betdemir@student.42istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/22 17:50:35 by betdemir          #+#    #+#             */
-/*   Updated: 2026/08/27 19:00:09 by betdemir         ###   ########.fr       */
+/*   Updated: 2026/08/27 20:39:43 by betdemir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,9 @@ char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putchar_fd(char c, int fd);
-void  ft_putstr_fd(char *s, int fd);
-void  ft_putendl_fd(char *s, int fd);
-void  ft_putnbr_fd(int n, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+t_list	*ft_lstnew(void *context);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 #endif
