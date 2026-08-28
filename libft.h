@@ -6,7 +6,7 @@
 /*   By: betdemir@student.42istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/22 17:50:35 by betdemir          #+#    #+#             */
-/*   Updated: 2026/08/28 10:54:16 by betdemir         ###   ########.fr       */
+/*   Updated: 2026/08/28 12:56:10 by betdemir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,6 @@ t_list			*ft_lstnew(void *context);
 void			ft_lstadd_front(t_list **lst, t_list *new);
 unsigned int	ft_lstsize(t_list *lst);
 t_list			*ft_lstlast(t_list *lst);
+void 			ft_lstdelone(t_list *lst, void (*del)(void *));
+void			ft_lstclear(t_list **lst, void (*del)(void *));
 #endif
