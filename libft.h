@@ -6,7 +6,7 @@
 /*   By: betdemir@student.42istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/22 17:50:35 by betdemir          #+#    #+#             */
-/*   Updated: 2026/08/28 12:56:10 by betdemir         ###   ########.fr       */
+/*   Updated: 2026/08/28 14:51:19 by betdemir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,6 @@ unsigned int	ft_lstsize(t_list *lst);
 t_list			*ft_lstlast(t_list *lst);
 void 			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
+void			ft_lstiter(t_list *lst, void (*f)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 #endif
