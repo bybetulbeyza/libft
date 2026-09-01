@@ -6,7 +6,7 @@
 /*   By: betdemir@student.42istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/08 16:23:23 by betdemir          #+#    #+#             */
-/*   Updated: 2026/08/22 18:22:16 by betdemir         ###   ########.fr       */
+/*   Updated: 2026/09/01 13:11:37 by betdemir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *arr)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (arr[i])
