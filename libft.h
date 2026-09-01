@@ -6,7 +6,7 @@
 /*   By: betdemir@student.42istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/22 17:50:35 by betdemir          #+#    #+#             */
-/*   Updated: 2026/08/28 14:51:19 by betdemir         ###   ########.fr       */
+/*   Updated: 2026/09/01 14:10:44 by betdemir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int				ft_isascii(int c);
 int				ft_isprint(int c);
 size_t			ft_strlen(const char *arr);
 void			*ft_memset(void *s, int c, size_t n);
-void			bzero(void *s, size_t n);
+void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
@@ -60,8 +60,10 @@ t_list			*ft_lstnew(void *context);
 void			ft_lstadd_front(t_list **lst, t_list *new);
 unsigned int	ft_lstsize(t_list *lst);
 t_list			*ft_lstlast(t_list *lst);
-void 			ft_lstdelone(t_list *lst, void (*del)(void *));
+void			ft_lstadd_back(t_list **lst, t_list *new);
+void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
+					void (*del)(void *));
 #endif
