@@ -6,61 +6,51 @@
 /*   By: betdemir@student.42istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 08:17:16 by betdemir          #+#    #+#             */
-/*   Updated: 2026/08/27 10:37:34 by betdemir         ###   ########.fr       */
+/*   Updated: 2026/09/01 13:04:17 by betdemir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_len(int n)
+static size_t	ft_len(long n)
 {
 	size_t	count;
 
 	count = 0;
+	if (n <= 0)
+		count++;
 	while (n != 0)
 	{
-		count++;
 		n = n / 10;
+		count++;
 	}
 	return (count);
 }
 
-size_t	get_div(size_t len)
-{
-	size_t	div;
-
-	div = 1;
-	while (len > 1)
-	{
-		div *= 10;
-		len--;
-	}
-	return (div);
-}
-
 char	*ft_itoa(int n)
 {
+	size_t	len;
 	char	*arr;
-	size_t	i;
-	size_t	div;
+	long	nb;
 
-	arr = malloc(ft_len(n)+ 1);
+	nb = n;
+	len = ft_len(nb);
+	arr = malloc(len + 1);
 	if (!arr)
 		return (NULL);
-	div = get_div(ft_len(n));
-	i = 0;
-	if (n < 0)
+	arr[len] = '\0';
+	len--;
+	if (nb == 0)
+		arr[0] = '0';
+	if (nb < 0)
 	{
-		arr[i] = '-';
-		n *= -1;
-		i++;
+		arr[0] = '-';
+		nb = -nb;
 	}
-	while (i < (ft_len(n)+ 1) && div > 0)
+	while (nb > 0)
 	{
-		arr[i] = ((n / div) % 10) + '0';
-		div /= 10;
-		i++;
+		arr[len--] = (nb % 10) + '0';
+		nb /= 10;
 	}
-	arr[i] = '\0';
 	return (arr);
 }
