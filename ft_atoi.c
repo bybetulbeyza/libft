@@ -6,7 +6,7 @@
 /*   By: betdemir@student.42istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 21:21:27 by betdemir          #+#    #+#             */
-/*   Updated: 2026/08/25 00:59:38 by betdemir         ###   ########.fr       */
+/*   Updated: 2026/09/01 13:04:38 by betdemir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *nptr)
 	i = 0;
 	sign = 1;
 	result = 0;
-	while (nptr[i] < 13 && nptr[i] > 9 || nptr[i] == ' ')
+	while ((nptr[i] < 13 && nptr[i] > 9) || nptr[i] == ' ')
 		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
