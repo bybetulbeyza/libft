@@ -6,9 +6,11 @@
 /*   By: betdemir@student.42istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/27 15:09:16 by betdemir          #+#    #+#             */
-/*   Updated: 2026/08/27 15:13:05 by betdemir         ###   ########.fr       */
+/*   Updated: 2026/09/01 13:10:30 by betdemir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {
