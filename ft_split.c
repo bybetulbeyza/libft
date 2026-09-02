@@ -6,7 +6,7 @@
 /*   By: betdemir@student.42istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/26 10:52:11 by betdemir          #+#    #+#             */
-/*   Updated: 2026/09/02 13:04:06 by betdemir         ###   ########.fr       */
+/*   Updated: 2026/09/02 13:04:34 by betdemir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static void	free_all(char **res, size_t i)
 {
 	while (i > 0)
 	{
-		free(res[i]);
 		i--;
+		free(res[i]);
 	}
 	free(res);
 }
