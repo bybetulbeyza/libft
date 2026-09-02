@@ -6,11 +6,11 @@
 /*   By: betdemir@student.42istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/22 19:00:07 by betdemir          #+#    #+#             */
-/*   Updated: 2026/08/22 19:03:28 by betdemir         ###   ########.fr       */
+/*   Updated: 2026/09/02 08:27:38 by betdemir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' || c <= 'z')
 		c -= 32;
