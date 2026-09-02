@@ -6,7 +6,7 @@
 /*   By: betdemir@student.42istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/26 10:52:11 by betdemir          #+#    #+#             */
-/*   Updated: 2026/08/26 12:28:09 by betdemir         ###   ########.fr       */
+/*   Updated: 2026/09/02 12:38:55 by betdemir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	free_all(char **res, size_t i)
 	free(res);
 }
 
-static	size_t	word_count(char const *s, char c)
+static size_t	word_count(char const *s, char c)
 {
 	size_t	i;
 	size_t	count;
@@ -48,30 +48,40 @@ static size_t	word_len(const char *s, char c)
 	return (len);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**fill_split(char const *s, char c, char **res)
 {
-	char	**res;
 	size_t	i;
 	size_t	j;
+	size_t	wordlen;
 
 	i = 0;
 	j = 0;
-	res = malloc(sizeof(char *) * (word_count(s, c) + 1));
-	if (!res)
-		return (NULL);
 	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
 		if (s[i])
 		{
-			res[j] = ft_substr(s, i, word_len(&s[i], c));
+			wordlen = word_len(&s[i], c);
+			res[j] = ft_substr(s, i, wlen);
 			if (!res[j])
 				return (free_all(res, j), NULL);
 			j++;
-			i += word_len(&s[i], c);
+			i += wlen;
 		}
 	}
 	res[j] = NULL;
 	return (res);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**res;
+
+	if (!s)
+		return (NULL);
+	res = malloc(sizeof(char *) * (word_count(s, c) + 1));
+	if (!res)
+		return (NULL);
+	return (fill_split(s, c, res));
 }
