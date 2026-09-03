@@ -6,7 +6,7 @@
 /*   By: betdemir@student.42istanbul.com.tr         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/26 10:52:11 by betdemir          #+#    #+#             */
-/*   Updated: 2026/09/02 14:22:15 by betdemir         ###   ########.fr       */
+/*   Updated: 2026/09/03 10:44:40 by betdemir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,10 @@ static char	**fill_split(char const *s, char c, char **res)
 			wordlen = word_len(&s[i], c);
 			res[j] = ft_substr(s, i, wordlen);
 			if (!res[j])
-				return (free_all(res, j), NULL);
+			{
+				all_free(res, j);
+				return (NULL);
+			}
 			j++;
 			i += wordlen;
 		}
